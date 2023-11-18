@@ -6,12 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ex1.component.scss'],
 })
 export class Ex1Component  implements OnInit {
-  distancia: number = 0;
-  gasolina: number = 0;
+  distancia?: number;
+  gasolina?: number;
   gasto: number = 0;
   mensagem: string = '';
   constructor() { }
   calcularGasto(){
+    if (this.distancia === undefined) {
+      this.distancia = 1
+    } 
+    if (this.gasolina === undefined) {
+      this.gasolina = 1
+    } 
     this.gasto = this.distancia/this.gasolina;
     if(this.gasto > 13){
       this.mensagem = `${this.gasto}Km/l Econômico`;
