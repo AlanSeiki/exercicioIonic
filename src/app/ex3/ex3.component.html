@@ -1,3 +1,20 @@
-<p>
-  ex3 works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Calculadora de IMC
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+  <ion-item>
+    <ion-input [(ngModel)]="altura" type="number" label="Altura" placeholder="Digíte sua altura"></ion-input>
+    <ion-input [(ngModel)]="peso" type="number" label="Peso" placeholder="Digite seu peso"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="calculaIMC()">
+      Calcular
+    </ion-button>
+  </ion-item>
+  <ion-item>
+      <P>{{classificacao}}</P>
+  </ion-item>
+
