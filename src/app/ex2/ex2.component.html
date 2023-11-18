@@ -1,0 +1,29 @@
+<!-- (2,0) Faça um programa que leia o ano de nascimento de uma pessoa, calcule a sua
+idade atual da pessoa e apresenta uma classificação. A página deve conter um
+campo e um botão que ao clicar calcule a data de nascimento e exiba as
+informações. A página também deve ter um botão Limpar para apagar a idade, o
+campo e a classificação. Apresente também a classificação abaixo, de acordo com a
+tabela, no formato “Idade - Classificação”. -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Calculadora de Idade
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label >Data de Nascimento</ion-label>
+    <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="dataNascimento"></ion-datetime>
+  </ion-item>
+
+  <ion-button expand="full" (click)="calcularIdade()">Calcular Idade</ion-button>
+  <ion-button expand="full" (click)="limparCampos()">Limpar</ion-button>
+
+  <ion-item *ngIf="resultado">
+    <ion-label>Resultado</ion-label>
+    <ion-note>{{ resultado }}</ion-note>
+  </ion-item>
+</ion-content>
+
