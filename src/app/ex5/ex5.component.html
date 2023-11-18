@@ -1,2 +1,36 @@
 <!-- Construa a calculadora abaixo, considerando as operações básicas, a opção
 de limpar e impressão do resultado. -->
+<ion-content>
+  <ion-row  
+  style="margin: 10px;
+         display: flex;
+         justify-content: center;
+         border: 2px solid white;
+         border-radius: 10px;"
+  >
+    <ion-label style="width: 100%;text-align: center;font-size: 30px;">
+      Calculadora
+    </ion-label>
+    <ion-item>
+      <ion-input [(ngModel)]="numero1" type="number" placeholder = "Número 1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="numero2" type="number" placeholder = "Número 2"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select [(ngModel)]="operacao" label="Operação" placeholder="Operação">
+        <ion-select-option value="soma">Soma</ion-select-option>
+        <ion-select-option value="subtracao">Subtração</ion-select-option>
+        <ion-select-option value="divisao">Divisão</ion-select-option>
+        <ion-select-option value="multiplicacao">Multiplicação</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-row style="width: 100%;display: flex;justify-content: center;">
+      <ion-button (click) = "calcular()">Calcular</ion-button>
+      <ion-button (click) = "limpar()">Limpar</ion-button>
+    </ion-row>
+    <ion-item style="width: 100%;left: 3px;">
+      <p>Resultado:</p><span>{{resultado}}</span>
+    </ion-item>
+  </ion-row>
+</ion-content>
