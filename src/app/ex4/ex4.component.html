@@ -1,0 +1,32 @@
+<!-- Faça uma lista de tarefas seguindo os requisitos abaixo:
+a. Crie um campo de entrada de dados e um botão adicionar.
+b. Ao clicar no botão adicionar o valor do campo de texto será adicionado a
+uma lista.
+c. Ao lado de cada tarefa, adicione um botão “Excluir” que ao clicar vai remover
+o item.
+d. As tarefas adicionadas ficam na cor vermelha.
+Ao clicar sobre uma tarefa o usuário a concluí e deve ser aplicado um estilo que
+deixa o texto na cor verde e tachado. Dica: para fazer o texto tachado utilize a
+propriedade CSS text-decoration com valor line-through. -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Lista de Tarefas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input [(ngModel)]="novaTarefa" placeholder="Adicione uma tarefa"></ion-input>
+    <ion-button expand="full" (click)="adicionarTarefa()">Adicionar</ion-button>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let tarefa of tarefas" (click)="toggleConcluida(tarefa)">
+      <ion-label [ngClass]="{'task': !tarefa.concluida, 'completed': tarefa.concluida}">{{ tarefa.nome }}</ion-label>
+      <ion-button (click)="removerTarefa(tarefa)">Excluir</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
