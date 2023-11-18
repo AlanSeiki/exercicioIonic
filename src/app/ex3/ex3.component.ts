@@ -5,10 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './ex3.component.html',
   styleUrls: ['./ex3.component.scss'],
 })
-export class Ex3Component  implements OnInit {
+export class Ex3Component{
 
   constructor() { }
-
-  ngOnInit() {}
 
 }
